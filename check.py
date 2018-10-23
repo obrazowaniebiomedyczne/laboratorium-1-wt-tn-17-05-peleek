@@ -19,11 +19,9 @@ image = midcircle((512, 512))
 write_png(image, 'results/2_circle_3.png')
 
 # Szachownica
-"""
 print("  szachownica")
 image = checkerboard(256)
 write_png(image, 'results/3_checkerboard.png')
-"""
 
 # Dobra
 lenna = np.squeeze(read_png('data/mono/lenna.png'))

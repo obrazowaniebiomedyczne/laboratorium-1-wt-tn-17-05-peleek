@@ -25,7 +25,6 @@ def midcircle(size):
     else:
         radius = size[0]/4
     radius = int(radius)
-    print(radius)
     image = np.zeros((size)).astype(np.uint8)
     image[int(size[0]/2), int(size[1]/2)] = 255
 
@@ -42,7 +41,18 @@ def midcircle(size):
 
 
 def checkerboard(size):
-    pass
+    image = np.zeros((size, size)).astype(np.uint8)
+    squareSize = int(size/8)
+    counter = 0
+    for i in range(0, 8):
+        for j in range(0, 8):
+            if ((i+j) % 2 == 1):
+                counter = counter + 1
+                print(counter)
+                image[i*squareSize:i*squareSize + squareSize,
+                      j*squareSize:j*squareSize + squareSize] = 255
+
+    return image
 
 
 """
