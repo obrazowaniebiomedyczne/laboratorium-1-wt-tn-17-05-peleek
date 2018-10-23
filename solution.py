@@ -47,8 +47,6 @@ def checkerboard(size):
     for i in range(0, 8):
         for j in range(0, 8):
             if ((i+j) % 2 == 1):
-                counter = counter + 1
-                print(counter)
                 image[i*squareSize:i*squareSize + squareSize,
                       j*squareSize:j*squareSize + squareSize] = 255
 
@@ -61,7 +59,15 @@ def checkerboard(size):
 
 
 def nn_interpolation(source, new_size):
-    pass
+    w_destination, h_destination = new_size
+    h_source, w_source = source.shape
+    ratio_x = w_source / w_destination
+    ratio_y = h_source / h_destination
+    image = np.zeros(new_size).astype(np.uint8)
+    for (i, j) in np.ndindex(image.shape):
+        image[i, j] = source[int(i*ratio_y), int(j*ratio_x)]
+
+    return image
 
 
 """

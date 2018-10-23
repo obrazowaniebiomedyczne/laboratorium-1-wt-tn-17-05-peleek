@@ -27,13 +27,11 @@ write_png(image, 'results/3_checkerboard.png')
 lenna = np.squeeze(read_png('data/mono/lenna.png'))
 
 # Interpolacja NN
-"""
 print("- Ocena dobra")
 print("  interpolacja najbliższych sąsiadów")
 image = nn_interpolation(lenna, (100, 100))
 image = nn_interpolation(image, (512, 512))
 write_png(image, 'results/4_nn.png')
-"""
 
 # Interpolacja dwuliniowa
 """
